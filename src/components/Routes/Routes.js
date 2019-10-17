@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Loader from '../Loader/Loader';
 import css from './Routes.module.css';
 import pageTransition from '../../transitions/pegest.module.css';
+import NotFound from '../NotFound/NotFound';
 
 const AsyncHome = Loadable({
   loader: () => import('../Home/Home' /* webpackChunkName: "home-page" */),
@@ -52,6 +53,7 @@ const routes = ({ location }) => {
               <Route path="/about" component={AsyncAbout} />
               <Route path="/pets/:id" component={SinglePagest} />
               <Route path="/pets" component={AsyncPets} />
+              <Route component={NotFound} />
             </Switch>
           </section>
         </CSSTransition>
